@@ -9,80 +9,45 @@
 </head>
 <body>
   <main class="page">
-    <header>
-      <div class="eyebrow">Software Engineer & IT Professional</div>
-      <h1>Hi, I’m John Hawley.</h1>
-      <p class="subtitle">
-        I’m a software engineer with experience in AAA game development, IT infrastructure,
-        endpoint support, and cloud-focused technical projects.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="https://github.com/jh318" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="button" href="https://www.linkedin.com/in/jh318/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="button" href="https://jh318.itch.io/" target="_blank" rel="noreferrer">itch.io</a>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span aria-hidden="true"></span> Software Engineer & IT Professional</div>
+        <h1>John Hawley</h1>
+        <p class="subtitle">
+          Software engineer with a background in AAA game development and IT infrastructure. 
+          I enjoy designing, building, and improving software and systems.
+        </p>
+        <div class="actions">
+          <a class="button" href="https://github.com/jh318" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://www.linkedin.com/in/jh318/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://jh318.itch.io/" target="_blank" rel="noreferrer">itch.io <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </header>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        I’ve worked on shipped multi-platform titles at 2K, contributing to gameplay systems,
-        backend integrations, CI/CD tooling, telemetry, and cross-platform development workflows.
-      </p>
-      <p>
-        My current IT experience includes Active Directory administration, endpoint management,
-        scripting, network auditing, and operational infrastructure support.
-      </p>
-      <p>
-        I’m currently focused on expanding cloud and infrastructure engineering skills through AWS,
-        automation, Linux tooling, and personal technical projects.
-      </p>
-    </section>
-
-    <section>
-      <h2>Technical Focus</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Software Engineering</h3>
-          <p class="muted">C++, C#, Python, JavaScript, Git, gameplay systems, UI systems, backend/API integrations.</p>
-        </div>
-        <div class="card">
-          <h3>Infrastructure & IT</h3>
-          <p class="muted">Active Directory, endpoint management, networking, documentation, troubleshooting, device lifecycle support.</p>
-        </div>
-        <div class="card">
-          <h3>Cloud & Automation</h3>
-          <p class="muted">AWS Certified Cloud Practitioner with hands-on projects using AWS storage, hosting, and automation concepts.</p>
-        </div>
-        <div class="card">
-          <h3>Game Development</h3>
-          <p class="muted">Godot, Unity, game jams, small-scope projects, and interactive systems built for fun and learning.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Featured Projects</h2>
-      <div class="grid">
-        <article class="card">
+    <section class="section projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="section-kicker">Selected work</p><h2 id="projects-title">Featured Projects</h2></div><span class="section-index" aria-hidden="true">01</span></div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-topline"><span class="project-type">Cloud infrastructure</span><span aria-hidden="true">01</span></div>
           <h3>Cloud Portfolio Site</h3>
           <p class="muted">
-            This portfolio is hosted using AWS static website infrastructure. Future improvements may include CloudFront,
-            Route 53, GitHub Actions deployment, and Terraform.
+            This portfolio is hosted with Amazon S3 and CloudFront, with automated deployments through GitHub Actions
+            using AWS IAM OIDC authentication. Terraform is a potential future improvement.
           </p>
           <ul class="tag-list">
             <li class="tag">AWS</li>
             <li class="tag">S3</li>
-            <li class="tag">Cloud</li>
+            <li class="tag">CloudFront</li>
+            <li class="tag">GitHub Actions</li>
+            <li class="tag">OIDC</li>
           </ul>
         </article>
-
-        <article class="card">
+        <article class="project-card">
+          <div class="project-topline"><span class="project-type">Game development</span><span aria-hidden="true">02</span></div>
           <h3>Railstation</h3>
-          <p class="muted">
-            A fast-paced robot rail shooter built in Godot for a game jam. Fight through hectic enemy encounters and survive the ride home.
-          </p>
-          <a href="https://jh318.itch.io/railstation" target="_blank" rel="noreferrer">Play on itch.io →</a>
+          <p class="muted">A fast-paced robot rail shooter built in Godot for a game jam. Fight through hectic enemy encounters and survive the ride home.</p>
+          <a class="project-link" href="https://jh318.itch.io/railstation" target="_blank" rel="noreferrer">Play on itch.io <span aria-hidden="true">→</span></a>
           <ul class="tag-list">
             <li class="tag">Godot</li>
             <li class="tag">Game Jam</li>
@@ -92,8 +57,70 @@
       </div>
     </section>
 
-    <section>
-      <h2>Skills</h2>
+    <section class="section about" aria-labelledby="about-title">
+      <div class="section-heading"><div><p class="section-kicker">Background</p><h2 id="about-title">About</h2></div><span class="section-index" aria-hidden="true">02</span></div>
+      <div class="about-layout">
+        <div class="about-copy">
+          <p>
+            I’ve worked on shipped multi-platform titles at 2K, contributing to gameplay systems,
+            backend integrations, CI/CD tooling, telemetry, and cross-platform development workflows.
+          </p>
+          <p>
+            My IT experience spans Active Directory administration, endpoint management, scripting, 
+            network troubleshooting, and hands-on infrastructure work, including security system installations and network cabling.
+          </p>
+          <p>
+            I’m currently focused on expanding cloud and infrastructure engineering skills through AWS,
+            automation, Linux tooling, and personal technical projects.
+          </p>
+        </div>
+        <div class="career" aria-labelledby="career-title">
+          <h3 id="career-title">Career timeline</h3>
+          <ol class="timeline">
+            <li>
+              <time>2019–2023</time>
+              <h4>Software Engineer</h4>
+              <p class="timeline-org">2K Games</p>
+              <p>Game development, backend services, and software integrations.</p>
+            </li>
+            <li>
+              <time>2024–Present</time>
+              <h4>IT &amp; Systems Support</h4>
+              <p>Infrastructure, endpoints, and technical operations.<br />Active Directory, device management, troubleshooting, and automation.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section focus" aria-labelledby="focus-title">
+      <div class="section-heading"><div><p class="section-kicker">Capabilities</p><h2 id="focus-title">Technical Focus</h2></div><span class="section-index" aria-hidden="true">03</span></div>
+      <div class="grid">
+        <div class="card">
+          <span class="card-icon" aria-hidden="true">{ }</span>
+          <h3>Software Engineering</h3>
+          <p class="muted">C++, C#, Python, JavaScript, Git, gameplay systems, UI systems, backend/API integrations.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon" aria-hidden="true">↳</span>
+          <h3>Infrastructure & IT</h3>
+          <p class="muted">Active Directory, endpoint management, networking, documentation, troubleshooting, device lifecycle support.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon" aria-hidden="true">☁</span>
+          <h3>Cloud & Automation</h3>
+          <p class="muted">AWS Certified Cloud Practitioner with hands-on projects using AWS storage, hosting, and automation concepts.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon" aria-hidden="true">◆</span>
+          <h3>Game Development</h3>
+          <p class="muted">Godot, Unity, game jams, small-scope projects, and interactive systems built for fun and learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" aria-labelledby="skills-title">
+      <div class="section-heading compact"><div><p class="section-kicker">Toolkit</p><h2 id="skills-title">Skills</h2></div><span class="section-index" aria-hidden="true">04</span></div>
       <ul class="tag-list">
         <li class="tag">C++</li>
         <li class="tag">Python</li>
