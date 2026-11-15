@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games | John Hawley</title>
+  <meta name="description" content="Games and game development projects by John Hawley, including Railstation and the upcoming Pizza Break." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Portfolio</a>
+      <a href="games.html" aria-current="page">Games</a>
+    </nav>
+
+    <header class="hero games-hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span aria-hidden="true"></span> John Hawley · Game development</div>
+        <h1>Games</h1>
+        <p class="subtitle">Small games, game jam projects, and ideas in progress. A place to play what I’ve built and see what’s coming next.</p>
+      </div>
+    </header>
+
+    <section class="section projects" aria-labelledby="games-title">
+      <div class="section-heading"><div><p class="section-kicker">Independent projects</p><h2 id="games-title">The collection</h2></div><span class="section-index" aria-hidden="true">01</span></div>
+      <div class="project-grid game-grid">
+        <!-- Add games by copying a game-card. Replace the media placeholder with a real screenshot; see README.md. -->
+        <article class="project-card game-card" aria-labelledby="railstation-title">
+          <div class="game-media">
+            <span class="section-kicker">Railstation</span>
+            <p>Screenshot coming soon</p>
+          </div>
+          <div class="project-topline"><span class="project-type">Game jam</span><span>Available</span></div>
+          <h3 id="railstation-title">Railstation</h3>
+          <p class="muted">A fast-paced robot rail shooter built in Godot for a game jam. Fight through hectic enemy encounters and survive the ride home.</p>
+          <ul class="tag-list" aria-label="Railstation technologies and categories">
+            <li class="tag">Godot</li>
+            <li class="tag">Game Jam</li>
+            <li class="tag">Rail Shooter</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="https://jh318.itch.io/railstation" target="_blank" rel="noreferrer" aria-label="Play Railstation on itch.io (opens in a new tab)">Play on itch.io <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card game-card" aria-labelledby="pizza-break-title">
+          <div class="game-media">
+            <span class="section-kicker">Pizza Break</span>
+            <p>Screenshot coming soon</p>
+          </div>
+          <div class="project-topline"><span class="project-type">In development</span><span>Coming soon</span></div>
+          <h3 id="pizza-break-title">Pizza Break</h3>
+          <p class="muted">A new game in progress. More details and a playable browser version will be added here when ready.</p>
+          <ul class="tag-list" aria-label="Pizza Break planned platform">
+            <li class="tag">Browser · planned</li>
+          </ul>
+          <div class="actions">
+            <!-- Replace with a link to games/pizza-break/index.html once the browser build is deployed. -->
+            <button class="button" type="button" disabled aria-describedby="pizza-play-note">Play in browser · soon</button>
+          </div>
+          <p class="game-note" id="pizza-play-note">Browser version coming soon.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built by John Hawley · Hosted on AWS · Deployed with GitHub Actions 🚀</p>
+    </footer>
+  </main>
+</body>
+</html>
