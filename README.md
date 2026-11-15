@@ -93,12 +93,12 @@ Development can also be performed using GitHub Codespaces and its forwarded-port
 │       └── deploy.yml
 ├── site/
 │   ├── index.html
-│   ├── games.html
 │   ├── css/
 │   │   └── style.css
 │   ├── js/
 │   ├── images/
 │   └── games/
+│       └── index.html
 └── README.md
 ```
 
@@ -106,19 +106,19 @@ Development can also be performed using GitHub Codespaces and its forwarded-port
 - `css/` contains the website's styles.
 - `js/` is reserved for client-side functionality.
 - `images/` contains website and project assets.
-- `games/` provides a location for playable browser game content.
+- `games/` contains the Games gallery; playable browser games use separate subdirectories.
 
 ## Games gallery
 
-Open `http://localhost:8000/games.html` during local development. Portfolio and Games share `css/style.css` and use ordinary HTML navigation; no JavaScript router or build step is needed.
+Open `http://localhost:8000/games/` during local development. Portfolio and Games share `css/style.css` and use ordinary HTML navigation; no JavaScript router or build step is needed.
 
-To add a game, copy an `<article class="project-card game-card">` in `site/games.html`. Give the heading a unique ID and update `aria-labelledby`, the description, tags, status, and Play link. Keep unavailable games as disabled buttons with an explanatory note rather than linking to a missing build. Pizza Break's engine is not yet listed because it has not been specified.
+To add a game, copy an `<article class="project-card game-card">` in `site/games/index.html`. Give the heading a unique ID and update `aria-labelledby`, the description, tags, status, and Play link. Keep unavailable games as disabled buttons with an explanatory note rather than linking to a missing build. Pizza Break's engine is not yet listed because it has not been specified.
 
 The gallery deliberately uses labeled placeholders rather than invented gameplay images. When a real screenshot is available, put it in `site/images/` and replace the contents of its `.game-media` element with an image, for example:
 
 ```html
 <div class="game-media">
-  <img src="images/railstation.webp"
+  <img src="/images/railstation.webp"
        alt="Describe the actual gameplay visible in the screenshot"
        width="1280" height="720" loading="lazy" />
 </div>
@@ -128,9 +128,9 @@ Use the actual image dimensions and meaningful alt text. The gallery reserves a 
 
 ### Routing and browser game deployment
 
-The gallery is served at `/games.html`, an explicit S3 object path. The existing workflow already uploads it and the shared CSS; no deployment changes are required. This repository does not define the CloudFront origin or routing configuration, so the implementation avoids assuming directory-index support. CloudFront's default root object does **not** automatically resolve subdirectories such as `/games/` to their `index.html`. S3 website origins can behave differently; see [AWS default root object documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html).
+The homepage is served at `/`, the gallery at `/games/`, and Pizza Break at `/games/pizza-break/`. CloudFront’s Viewer Request function internally rewrites directory URLs ending in `/` to `index.html`. The existing workflow uploads the gallery and shared CSS without deployment changes.
 
-For Pizza Break, place a future browser export and its assets under `site/games/pizza-break/`, then replace the disabled button with a link to `games/pizza-break/index.html`. Use relative asset URLs within the export so it works below that prefix. Do not link there until a build exists. Other games can each have their own subdirectory. Clean URLs such as `/games/pizza-break/` would require confirming website-origin index handling or adding a CloudFront rewrite separately.
+Pizza Break is deployed independently under `games/pizza-break/`; its repository and deployment pipeline are separate from this portfolio. After deploying this gallery move, the old `s3://johnhawley.io/games.html` object may need manual removal. Keep the `games/pizza-break/` objects intact.
 
 Builds in `site/` will be uploaded by the current workflow. Separately uploaded builds can also coexist because sync omits `--delete`; reserve distinct prefixes to avoid overwriting them. Removed or renamed files remain in S3 until deliberately cleaned up. The current `/*` invalidation covers both portfolio and game updates made by this workflow; independent game deployments need their own cache strategy.
 
